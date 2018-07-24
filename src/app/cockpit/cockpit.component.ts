@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter,Output,ViewChild } from '@angular/core';
+import { Component, OnInit, EventEmitter,Output,ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -19,7 +19,7 @@ export class CockpitComponent implements OnInit {
   onAddServer(newServerName) {
     this.serverCreated.emit({
       serverName: newServerName.value,
-      serverContent: this.contentServer.nativeElement.value;
+      serverContent: this.contentServer.nativeElement.value
     });
   }
 
@@ -28,7 +28,7 @@ export class CockpitComponent implements OnInit {
 
     this.blueprintCreated.emit({
       serverName:newServerName.value,
-      serverContent: this.contentServer.nativeElement.value;
+      serverContent: this.contentServer.nativeElement.value
     });
   }
 
