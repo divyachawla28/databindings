@@ -1,10 +1,12 @@
 <div class="container">
+  <button class="btn btn-danger form-control" (click)="buttonClick()">Random</button>
   <app-cockpit (serverCreated) = "onServeradded($event)" (blueprintCreated)="onblueprintadded($event)"></app-cockpit>
   <hr>
+  <button class="btn btn-danger" (click)="changeFirst()">Change</button>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
-      	<p>
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
+      	<p #contentParagraph>
 			<strong *ngIf="serverElement.type === 'server'" style="color:red">{{serverElement.content}}</strong>
 			<em *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</em>
 		</p>

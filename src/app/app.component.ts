@@ -23,4 +23,10 @@ export class AppComponent {
   		content:serverData.serverContent
   	});
   }
+  buttonClick() {
+    console.log("button click!");
+  }
+  changeFirst() {
+    this.serverElements[0].name = 'Just changed!'
+  }
 }
